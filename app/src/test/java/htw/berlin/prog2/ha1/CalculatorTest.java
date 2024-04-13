@@ -88,7 +88,19 @@ class CalculatorTest {
         assertEquals(expected, actual);
     }
 
+    //Teilaufgabe1
+    // Test to see if the number turns negative when I press the negative button
+    @Test
+    @DisplayName("should display a negative number")
+    void testNegativeKey() {
+        Calculator calc = new Calculator();
 
-    //TODO hier weitere Tests erstellen
+        calc.pressDigitKey(5);
+        calc.pressNegativeKey();
+
+        String expected = "-5";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
 }
-
