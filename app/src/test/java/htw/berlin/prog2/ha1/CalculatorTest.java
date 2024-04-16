@@ -103,4 +103,19 @@ class CalculatorTest {
 
         assertEquals(expected, actual);
     }
+
+    //Teilaufgabe2
+    //1. red test: testing if the invasion of zero turn back an error
+    @Test
+    @DisplayName("invasion of 0 should be an error")
+    void testInvasionZero() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(0);
+        calc.pressUnaryOperationKey("1/x");
+
+        String expected = "Error";
+        String actual = calc.readScreen();
+        assertEquals(expected, actual);
+    }
 }
