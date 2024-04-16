@@ -118,4 +118,22 @@ class CalculatorTest {
         String actual = calc.readScreen();
         assertEquals(expected, actual);
     }
+
+    //2. red test: testing if you can calculate multiple operation
+    @Test
+    @DisplayName("should do multiple operation")
+    void testMultipleOperation() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(4);
+        calc.pressBinaryOperationKey("+");
+        calc.pressDigitKey(3);
+        calc.pressBinaryOperationKey("+");
+        calc.pressDigitKey(7);
+        calc.pressEqualsKey();
+
+        String expected = "14";
+        String actual = calc.readScreen();
+        assertEquals(expected, actual);
+    }
 }
